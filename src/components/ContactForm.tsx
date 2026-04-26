@@ -105,8 +105,8 @@ export function ContactForm() {
     // Simulate form submission (since we don't have server action in Vite)
     setTimeout(() => {
       toast({
-        title: "Сообщение отправлено!",
-        description: "Спасибо за обращение. Мы свяжемся с вами в ближайшее время.",
+        title: "Заявка отправлена!",
+        description: "Спасибо! Мастер свяжется с вами в ближайшее время.",
         duration: 2000,
       })
 
@@ -214,7 +214,7 @@ export function ContactForm() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Напишите ваше сообщение..."
+            placeholder="Что вас интересует? Опишите желаемое изделие, цвет, размер или задайте вопрос..."
             className={cn("min-h-[120px]", errors.message && "border-red-500 focus-visible:ring-red-500")}
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "message-error" : undefined}
@@ -228,7 +228,7 @@ export function ContactForm() {
 
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           <Rocket className="mr-2 h-4 w-4" />
-          {isSubmitting ? "Отправка..." : "Отправить"}
+          {isSubmitting ? "Отправка..." : "Написать мастеру"}
         </Button>
       </form>
     </div>
